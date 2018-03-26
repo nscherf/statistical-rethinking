@@ -8,5 +8,5 @@ unstd.posterior <- likelihood * prior
 posterior <- unstd.posterior / sum(unstd.posterior)
 p_data <- data.frame(p=p_grid, posterior=posterior)
 
-ggplot(data=p_data, aes(x=p, y=posterior)) + geom_line()
+ggplot(data=p_data, aes(x=p, y=posterior)) + geom_line() + theme_minimal()
 
