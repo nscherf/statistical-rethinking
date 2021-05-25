@@ -18,7 +18,9 @@ m5.1 <- quap(
   ), data = d)
 
 set.seed(10)
-prior <- extract.prior( m5.1 ) 
+prior <- extract.prior( m5.1 )
+# let's have a quick look at the prior distribution of parameters
+precis(prior)
 mu <- link( m5.1 , post=prior, data=list( A=c(-2,2) ) )
 plot(NULL, xlim=c(-2,2), ylim=c(-2,2))
 for (i in 1:50 ) lines ( c(-2, 2), mu[i, ], col = col.alpha("black", 0.4))
